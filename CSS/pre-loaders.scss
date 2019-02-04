@@ -1,0 +1,121 @@
+// ------- colours
+
+$cOrigin: #fec196;
+$cChange: #ffa686;
+$cOne: #e6ebe0;
+$cTwo: #ed6a5a;
+$cThree: #36c9c6;
+
+/*.container {
+  width: 100%;
+  display: flex;
+  align-content: space-around;
+  justify-content: center;
+  align-content: center; */
+  
+
+  .circleloader {
+    border: 14px solid lighten(#e6ebe0, 8%);
+    border-top: 14px solid #ed6a5a;
+    border-bottom: 14px solid #f4f1bb;
+    border-left: 14px solid #36c9c6;
+    border-radius: 50%;
+    width: 100px;
+    height:100px;
+    animation: loaderOne 1.5s linear infinite;
+  }
+
+  @keyframes loaderOne {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  } 
+
+  // -------------- Wave
+
+  %bar {
+    width: 7px;
+    height: 3px;
+    background: $cOrigin;
+    position: absolute;
+    animation: wave 1s ease-out infinite alternate;
+  }
+
+  .wave {
+    position: relative;
+    top: 100px;
+
+    .first {
+      left: 5px;
+      @extend %bar;
+      animation-delay: .1s;
+    }
+
+    .second {
+      left: 15px;
+      @extend %bar;
+      animation-delay: .2s;
+
+    }
+
+    .third {
+      left: 25px;
+      @extend %bar;
+      animation-delay: .3s;
+    }
+
+    .fourth {
+      left: 35px;
+      @extend %bar;
+      animation-delay: .4s;
+    }
+
+    .fifth {
+      left: 45px;
+      @extend %bar;
+      animation-delay: .5s;
+    }
+
+    .sixth {
+      left: 55px;
+      @extend %bar;
+      animation-delay: .6s;
+    }
+  }
+
+
+
+  @keyframes wave {
+
+    0% { transform: scaleY(1); background: $cOrigin; }
+    25% { transform: scaleY(1); background: $cOrigin; }
+    50% { transform: scaleY(1); background: $cOrigin; }
+    75% { transform: scaleY(1); background: $cOrigin; }
+    100% { transform: scaleY(20); background: saturate($cTwo, 70%); }
+  }
+
+  // ------------------ line
+
+  @mixin aLine($lWidth,$lColor) {
+    height: 3px;
+    width: $lWidth;
+    background: $lColor;
+  }
+
+  .line {
+    position: relative;
+    top: 150px;
+    overflow: hidden;
+    @include aLine(200px,$cOne);
+
+    .line2 {
+      position: relative;
+      @include aLine(110px,saturate($cThree, 10%));
+      animation: lineAnim 1.2s ease-out infinite;
+
+    }
+  }
+
+  @keyframes lineAnim {
+    0% {transform: translate(-100px)};
+    100% {transform: translate(230px)};
+  }
