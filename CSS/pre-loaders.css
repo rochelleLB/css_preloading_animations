@@ -1,0 +1,87 @@
+/*.container {
+  width: 100%;
+  display: flex;
+  align-content: space-around;
+  justify-content: center;
+  align-content: center; */
+.circleloader {
+  border: 14px solid #fafbf9;
+  border-top: 14px solid #ed6a5a;
+  border-bottom: 14px solid #f4f1bb;
+  border-left: 14px solid #36c9c6;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: loaderOne 1.5s linear infinite; }
+
+@keyframes loaderOne {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+.wave .first, .wave .second, .wave .third, .wave .fourth, .wave .fifth, .wave .sixth {
+  width: 7px;
+  height: 3px;
+  background: #fec196;
+  position: absolute;
+  animation: wave 1s ease-out infinite alternate; }
+
+.wave {
+  position: relative;
+  top: 100px; }
+  .wave .first {
+    left: 5px;
+    animation-delay: .1s; }
+  .wave .second {
+    left: 15px;
+    animation-delay: .2s; }
+  .wave .third {
+    left: 25px;
+    animation-delay: .3s; }
+  .wave .fourth {
+    left: 35px;
+    animation-delay: .4s; }
+  .wave .fifth {
+    left: 45px;
+    animation-delay: .5s; }
+  .wave .sixth {
+    left: 55px;
+    animation-delay: .6s; }
+
+@keyframes wave {
+  0% {
+    transform: scaleY(1);
+    background: #fec196; }
+  25% {
+    transform: scaleY(1);
+    background: #fec196; }
+  50% {
+    transform: scaleY(1);
+    background: #fec196; }
+  75% {
+    transform: scaleY(1);
+    background: #fec196; }
+  100% {
+    transform: scaleY(20);
+    background: #ff5c48; } }
+.line {
+  position: relative;
+  top: 150px;
+  overflow: hidden;
+  height: 3px;
+  width: 200px;
+  background: #e6ebe0; }
+  .line .line2 {
+    position: relative;
+    height: 3px;
+    width: 110px;
+    background: #29d6d2;
+    animation: lineAnim 1.2s ease-out infinite; }
+
+@keyframes lineAnim {
+  0% {
+    transform: translate(-100px); }
+  100% {
+    transform: translate(230px); } }
+
+/*# sourceMappingURL=pre-loaders.css.map */
